@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register Page</title>
+        <style>
+            body{
+                background: url('/logo.jpeg');
+            }
+            nav{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-top: 100px;
+                border: none;
+    
+            }
+            .id{
+                border: 2px solid black;
+                border-radius: 10px;
+                padding: 25px;
+                background: url(/logo1.jpeg);
+            }
+            table{
+                border-spacing: 12px 12px;
+            }
+            td{
+                font-size: 25px;
+            }
+            #in{
+                width:150%;
+                height: 27px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="id">
+                <h1>WELCOME TO REGISTER PAGE</h1>
+                <form action="/register" method="post">
+                    <table>
+                        <tr>
+                            <td>USER_Name</td>
+                            <td colspan="2"><input type="text" id="in" name="name" placeholder="enter name" required></td>
+                        </tr>
+                        <tr>
+                            <td>Email_ID</td>
+                            <td colspan="2"><input type="email" id="in" name="email" placeholder="enter email" required></td>
+                        </tr>
+                        <tr>
+                            <td>Mobile_NO</td>
+                            <td colspan="2"><input type="number" id="in" name="phn" required></td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td colspan="2"><input type="password" id="in" name="pass" required></td>
+                        </tr>
+                        <tr>
+                            <td>Date_Of_Birth</td>
+                            <td colspan="2"><input type="date" id="in" name="date" ></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="SUBMIT"  style="height: 30px; background-color:green"></td>
+                            <td><input type="reset" value="RESET" style="height: 30px; background-color: red"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </nav>
+    </body>
+</html>
