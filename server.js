@@ -17,6 +17,7 @@ var con=express();
 var path=require('path');
 
 var bodyparser=require('body-parser');
+const { Script } = require('vm');
 
 con.use(bodyparser.json());
 
@@ -24,15 +25,15 @@ con.use(bodyparser.urlencoded({extended:true}));
 
 con.use(express.static(path.join(__dirname,'/public')));
 
-con.listen(6800,()=>{
+con.listen(6008,()=>{
     console.log('server connected')
 });
 
 con.get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname,'/login.html'))
-});
-con.get('/register',(req,res)=>{
     res.sendFile(path.join(__dirname,'/register.html'))
+});
+con.get('/login',(req,res)=>{
+    res.sendFile(path.join(__dirname,'/login.html'))
 });
 
 
@@ -51,13 +52,25 @@ con.post('/register', (req, res) => {
     app.query(sql, [user, email_id, mobile, password, birth], (err, result) => {
 
         if (err) {
-            console.log(err);
+            if (err.code === 'ER_DUP_ENTRY') {
+                return res.send(`
+                    <script>
+                        alert("Email already exists! Try another email.");
+                        window.location.href="/";
+                    </script>
+                `);
+            }
             return res.send("Database Error");
         }
 
         console.log("Inserted Successfully");
-
-        res.redirect('/');
+        return res.send(`
+            <script>
+                alert("Sign Up Successfully");
+                window.location.href="/login";
+            </script>
+        `);
+        
 
     });
 
