@@ -8,7 +8,7 @@ var app=sql.createConnection({
 
 app.connect((err)=>{
     if(err) throw err;
-    console.log("Database is connected");
+    console.log("Database is connected successfully");
 });
 
 var express=require('express');
