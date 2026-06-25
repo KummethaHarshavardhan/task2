@@ -92,7 +92,12 @@ con.post('/login',(req,res)=>{
 
         }else{
 
-            res.send("<h1>Invalid Email or Password</h1>");
+            res.send(`
+                <script>
+                    alert('Invalid Email or Password');
+                    window.location.href="/login";
+                </script>
+                `);
 
         }
 
