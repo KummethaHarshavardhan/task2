@@ -18,7 +18,6 @@ var path=require('path');
 
 var bodyparser=require('body-parser');
 
-
 con.use(bodyparser.json());
 
 con.use(bodyparser.urlencoded({extended:true}));
@@ -26,7 +25,7 @@ con.use(bodyparser.urlencoded({extended:true}));
 con.use(express.static(path.join(__dirname,'/public')));
 
 con.listen(6008,()=>{
-    console.log('server connected')
+    console.log('server connected');
 });
 
 con.get('/',(req,res)=>{

@@ -1,23 +1,46 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Success</title>
-        <style>
-            div{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-        </style>
-    </head>
+<head>
+<style>
+.container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    height:100vh;
+}
 
-    <body>
-        <div>
-            <h1>LOGIN SUCCESSFULLY</h1>
-            <video autoplay loop muted playsinline width="500px" height="500px">
-                    <source src="/logo3.mp4" type="video/mp4">
-            </video>
-        </div>
-    </body>
+.div-1 img,.div-2 img{
+    width:50px;
+    height:50px;
+    
+    animation:bounce 0.6s infinite alternate;
+}
+
+.div-2 img{
+    animation-delay:0.3s;
+}
+
+@keyframes bounce{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-20px);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="div-1"><img src="/ballon.png"></div>
+    <h1>Login Successfully</h1>
+    <div class="div-2"><img src="/ballon.png"></div>
+</div>
+<video autoplay loop muted playsline>
+    <source src="/logo3.mp4" type="video/mp4">
+</video>
+
+</body>
 </html>
